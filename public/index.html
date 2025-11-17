@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid Glass Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="auth-container" class="glass-card">
+        <h2>Liquid Glass Chat</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button id="signup-btn">Sign Up</button>
+        <button id="login-btn">Login</button>
+        <p id="auth-message"></p>
+    </div>
+
+    <div id="chat-container" class="hidden">
+        <div id="sidebar" class="glass-card">
+            <h3>Channels</h3>
+            <ul id="channels-list">
+                <li data-room="global" class="active"># Global Chat</li>
+            </ul>
+            <h3>Groups</h3>
+            <ul id="groups-list"></ul>
+            <button id="create-group-btn">+ Create Group</button>
+            <div id="group-creation" class="hidden">
+                <input type="text" id="group-name" placeholder="Group Name">
+                <button id="confirm-create-group">Create</button>
+            </div>
+            <h3>DMs</h3>
+            <ul id="dms-list"></ul>
+            <div id="dm-creation">
+                <input type="text" id="dm-username" placeholder="Username to DM">
+                <button id="start-dm-btn">Start DM</button>
+            </div>
+        </div>
+        <div id="chat-window" class="glass-card">
+            <div id="room-header"></div>
+            <div id="messages"></div>
+            <div id="input-area">
+                <input type="text" id="message-input" placeholder="Type a message...">
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
